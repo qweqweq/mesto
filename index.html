@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <meta name="description" content="Четвертая проектная работа" />
+    <meta name="keywords" content="html, css, базовый JS" />
+    <meta name="author" content="Андрей Блохин" />
+</head>
+
+<body class="body">
+    <header class="header">
+        <img class="header__logo" src="./images/header-logo.svg">
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile__container">
+                <img class="profile__avatar" src="./images/J.Kusto.jpg" alt="аватар пользователя">
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button" type="button"></button>
+                    <p class="profile__about">Исследователь океана</p>
+                </div>
+            </div>
+            <button class="profile__add-button" type="button"></button>
+        </section>
+        <section class="cards">
+            <ul class="cards__list">
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/karachaevo-cherkessiya.jpg" alt="Карачаевск">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Карачаевск</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/elbrus.jpg" alt="гора Эльбрус">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Гора Эльбрус</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/dombay.jpg" alt="Домбай">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Домбай</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/elbrus.jpg" alt="гора Эльбрус">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Гора Эльбрус</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/dombay.jpg" alt="Домбай">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Домбай</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+                <li class="cards__item">
+                    <img class="cards__image" src="./images/karachaevo-cherkessiya.jpg" alt="Карачаевск">
+                    <div class="cards__description">
+                        <h2 class="cards__name">Карачаево-Черкесия</h2>
+                        <button class="cards__like-button" type="button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__text">© 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__close" type="button"></button>
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form">
+                <fieldset class="form__input-container">
+                    <input class="form__item form__item-name" type="text" value="Жак-Ив Кусто" placeholder="Имя">
+                    <input class="form__item form__item-about" type="text" value="Исследователь океана"
+                        placeholder="О себе">
+                </fieldset>
+                <button class="popup__save-button" type="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="./script/script.js"></script>
+</body>
+
+
+</html>

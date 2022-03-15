@@ -1,0 +1,9 @@
+.cards__image {
+  width: 282px;
+}
+
+@media screen and (max-width: 597px) {
+  .cards__item {
+    margin: 0 auto;
+  }
+}

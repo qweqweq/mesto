@@ -1,0 +1,18 @@
+.cards__like-button {
+  background-image: url(../../../images/like.svg);
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 19px;
+  background-position: center;
+  border: none;
+  background-color: #ffffff;
+}
+
+.cards__like-button:hover {
+  opacity: 0.5;
+}
+
+.cards__like-button:active {
+  background-image: url(../../../images/black_heart.svg);
+  opacity: 1;
+}
