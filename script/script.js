@@ -1,4 +1,3 @@
-console.log('kjvfksfj');
 let popup = document.querySelector('.popup');
 let profileContainer = document.querySelector('.profile');
 let formElement = document.querySelector('.popup__form');
@@ -6,8 +5,8 @@ let formElement = document.querySelector('.popup__form');
 let openPopup = profileContainer.querySelector('.profile__edit-button')
 let closePopup = popup.querySelector('.popup__close');
 
-let nameInput = formElement.querySelector('.form__item-name');
-let jobInput = formElement.querySelector('.form__item-about');
+let nameInput = formElement.querySelector('.popup__item-name');
+let jobInput = formElement.querySelector('.popup__item-about');
 
 let profileName = profileContainer.querySelector('.profile__name');
 let profileJob = profileContainer.querySelector('.profile__about');

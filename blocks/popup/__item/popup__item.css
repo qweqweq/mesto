@@ -1,4 +1,4 @@
-.form__item {
+.popup__item {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 597px) {
-  .form_item {
+  .popup_item {
     margin-bottom: 32px;
   }
 }
