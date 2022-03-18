@@ -5,15 +5,15 @@ let formElement = document.querySelector('.popup__form');
 let openPopup = profileContainer.querySelector('.profile__edit-button')
 let closePopup = popup.querySelector('.popup__close');
 
-let nameInput = formElement.querySelector('.popup__item-name');
-let jobInput = formElement.querySelector('.popup__item-about');
+let nameInput = formElement.querySelector('.popup__item_name');
+let jobInput = formElement.querySelector('.popup__item_about');
 
 let profileName = profileContainer.querySelector('.profile__name');
 let profileJob = profileContainer.querySelector('.profile__about');
 
 // открытие окна редактирования профиля
 function editProfile () {
-    popup.classList.add('popup__opened');
+    popup.classList.add('popup_opened');
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
 
@@ -22,7 +22,7 @@ function editProfile () {
 //закрытие окна редактирования
 
 function closedPopup () {
-    popup.classList.remove('popup__opened');
+    popup.classList.remove('popup_opened');
 }
 //редактирование профиля
 

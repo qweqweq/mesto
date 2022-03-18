@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesto</title>
+    <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css" />
     <meta name="description" content="Четвертая проектная работа" />
     <meta name="keywords" content="html, css, базовый JS" />
@@ -81,18 +81,17 @@
         <div class="popup__container">
             <button class="popup__close" type="button"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form">
-                <fieldset class="popup__input-container">
-                    <input class="popup__item popup__item-name" type="text" value="Жак-Ив Кусто" placeholder="Имя">
-                    <input class="popup__item popup__item-about" type="text" value="Исследователь океана"
-                        placeholder="О себе">
+            <form class="popup__form" name="popup-form">
+                <input class="popup__item popup__item_name" type="text" name="popup-name" value="Жак-Ив Кусто"
+                    placeholder="Имя">
+                <input class="popup__item popup__item_about" type="text" name="popup-about" value="Исследователь океана"
+                    placeholder="О себе">
                 </fieldset>
                 <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
-    <script src="./script/script.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
-
 
 </html>

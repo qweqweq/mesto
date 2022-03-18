@@ -4,12 +4,11 @@
   background-color: #000000;
   border: none;
   color: #ffffff;
-  font-style: normal;
-  font-weight: 400;
   font-size: 18px;
   line-height: 22px;
   margin: 19px auto 0;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .popup__save-button:hover {
@@ -24,6 +23,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    margin: 14px auto 0;
+    margin-top: 19px;
+}
   }
 }

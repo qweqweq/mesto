@@ -12,10 +12,9 @@
   .popup__title {
     min-width: 238px;
     padding: 25px 22px 75px;
-    font-weight: 900;
-    font-style: normal;
     font-size: 18px;
     line-height: 22px;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
