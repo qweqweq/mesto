@@ -12,8 +12,3 @@
 .cards__like-button:hover {
   opacity: 0.5;
 }
-
-.cards__like-button:active {
-  background-image: url(../../../images/black_heart.svg);
-  opacity: 1;
-}
