@@ -29,14 +29,14 @@ const initialCards = [
 
 //объявление переменных
 const popup = document.querySelector('.popup');
-const popupEdit = document.querySelector('.popup__edit');
-const popupAdd = document.querySelector('.popup__add')
+const popupEdit = document.querySelector('.popup-edit');
+const popupAdd = document.querySelector('.popup-add')
 const profileContainer = document.querySelector('.profile');
 // const formElement = document.querySelector('.popup__form');
 const profileFormElement = document.querySelector('#profile-form');
 
 const openPopup = profileContainer.querySelector('.profile__edit-button')
-const closePopupButton = popup.querySelector('.popup__edit_close');
+const closePopupButton = popup.querySelector('.popup-edit-close');
 const closePopup = popup.querySelector('.popup__close');
 
 const nameInput = profileFormElement.querySelector('.popup__item_type_name');
@@ -49,15 +49,15 @@ const cardsContainer = document.querySelector('.cards__list');
 const template = document.querySelector('.cards-template');
 
 const addCardButton = document.querySelector('.profile__add-button');
-const addCardCloseButton = document.querySelector('.popup__add_close');
+const addCardCloseButton = document.querySelector('.popup-add-close');
 const inputPlaceName = document.querySelector('.popup__item_type_place-name');
 const inputPlaceLink = document.querySelector('.popup__item_type_place-link');
 const placeFormElement = document.querySelector('#place-form');
 const allCards = document.querySelector('.cards__list');
-const zoomCard = document.querySelector('.popup__img');
-const zoomImage = document.querySelector('.popup__img_src');
-const zoomTitle = document.querySelector('.popup__img_title');
-const closeZoomButton = document.querySelector('.popup__img_close');
+const zoomCard = document.querySelector('.popup-img');
+const zoomImage = document.querySelector('.popup-img-src');
+const zoomTitle = document.querySelector('.popup-img-title');
+const closeZoomButton = document.querySelector('.popup-img-close');
 const imageCards = document.querySelector('.cards__image');
 
 
