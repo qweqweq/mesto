@@ -11,8 +11,13 @@
 1.  БЭМ;
 1.  адаптивная верстка;
 1.  медиазапросы;
-1.  с помощью JS реализована функция открытия и закрытия окна редактирования.
+1.  JS
 
-- [Ссылка на GitHub Pages](https://qweqweq.github.io/mesto/)
+   Возможности:
+   - редактирование данных пользователя;
+   - добавление и удаление фотографии;
+   - возможность поставить понравившемуся фото лайк.
 
-- [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=28212%3A2)
+[Ссылка на GitHub Pages](https://qweqweq.github.io/mesto/)
+
+[Ссылка на макет в Figma](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1)
