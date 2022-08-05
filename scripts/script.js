@@ -28,21 +28,20 @@ const initialCards = [
 ];
 
 //объявление переменных
-const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('.popup-edit');
-const popupAdd = document.querySelector('.popup-add')
+const popupNewCard = document.querySelector('.popup-add')
 const profileContainer = document.querySelector('.profile');
 const profileFormElement = document.querySelector('#profile-form');
-const profileOpenPopup = profileContainer.querySelector('.profile__edit-button')
-const popupProfileCloseButton = popupProfile.querySelector('.popup-edit-close');
+const profileOpenButton = profileContainer.querySelector('.profile__edit-button')
+const profileCloseButton = popupProfile.querySelector('.popup-edit-close');
 const nameInput = profileFormElement.querySelector('.popup__item_type_name');
 const jobInput = profileFormElement.querySelector('.popup__item_type_about');
 const profileName = profileContainer.querySelector('.profile__name');
 const profileJob = profileContainer.querySelector('.profile__about');
 const cardsContainer = document.querySelector('.cards__list');
 const template = document.querySelector('.cards-template');
-const cardAddOpenButton = document.querySelector('.profile__add-button');
-const cardAddCloseButton = document.querySelector('.popup-add-close');
+const newCardOpenButton = document.querySelector('.profile__add-button');
+const newCardCloseButton = document.querySelector('.popup-add-close');
 const nameInputPlace = document.querySelector('.popup__item_type_place-name');
 const linkInputPlace = document.querySelector('.popup__item_type_place-link');
 const placeFormElement = document.querySelector('#place-form');
@@ -50,19 +49,18 @@ const zoomCard = document.querySelector('.popup-img');
 const zoomImage = document.querySelector('.popup-img-src');
 const zoomTitle = document.querySelector('.popup-img-title');
 const zoomCloseButton = document.querySelector('.popup-img-close');
-const cardImage = document.querySelector('.cards__image');
 
 // Добаление новой карточки template
 function getCards(item) {
   const cardAdd = template.content.cloneNode(true);
   const cardImage = cardAdd.querySelector('.cards__image');
-  const nameCard = cardAdd.querySelector('.cards__name');
+  const cardName = cardAdd.querySelector('.cards__name');
   const cardLikeButton = cardAdd.querySelector('.cards__like-button');
   const cardDeleteButton = cardAdd.querySelector('.cards__delete-button');
 
   cardImage.src = item.link;
   cardImage.name = item.name;
-  nameCard.textContent = item.name;
+  cardName.textContent = item.name;
 
 //Слушатели событий
   cardDeleteButton.addEventListener('click', deleteCard);
@@ -70,7 +68,7 @@ function getCards(item) {
 
 //Приближение карточки
   cardImage.addEventListener('click', function(){
-  zoomCard.classList.add('popup_opened');
+  openPopup(zoomCard);
   zoomImage.src=item.link;
   zoomImage.alt=item.name;
   zoomTitle.textContent=item.name;
@@ -109,42 +107,42 @@ function closePopup(popup) {
 }
 
 // открытие окна редактирования профиля
-function editProfile () {
+function openProfile () {
   openPopup(popupProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 }
 
-function closedPopupButton () {
+function closeProfilePopupButton () {
   closePopup(popupProfile);
 }
 
-function closedAddPopupButton () {
-  closePopup(popupAdd);
+function closeNewCardPopupButton () {
+  closePopup(popupNewCard);
 }
 
-function closedZoomButton () {
+function closeZoomButton () {
   closePopup(zoomCard);
 }
 
 //редактирование профиля
-function formSubmitHandler (evt) {
+function handleSubmitProfileForm (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  closedPopupButton()
+  closeProfilePopupButton()
 }
 
 // открытие окна добавления карточки
-function addCardOpen() {
+function openNewCard() {
   nameInputPlace.value = "";
   linkInputPlace.value = "";
-  openPopup(popupAdd)
+  openPopup(popupNewCard)
 }
 
 //Добавление карточки
-function addCard(e) {
-  e.preventDefault();
+function handleSubmitNewCardForm(evt) {
+  evt.preventDefault();
   newCard =
   {
           name: nameInputPlace.value,
@@ -152,25 +150,25 @@ function addCard(e) {
       }
 
   cardsContainer.prepend(getCards(newCard));
-  addCardClosedButton();
+  closeNewCardButton();
 }
 
 // закрытие окна добавления карточки
-function addCardClosedButton () {
-  closePopup(popupAdd);
+function closeNewCardButton () {
+  closePopup(popupNewCard);
 
 }
 
-cardAddOpenButton.addEventListener('click', addCardOpen);
+newCardOpenButton.addEventListener('click', openNewCard);
 
-profileOpenPopup.addEventListener('click', editProfile);
+profileOpenButton.addEventListener('click', openProfile);
 
-popupProfileCloseButton.addEventListener('click', closedPopupButton);
+profileCloseButton.addEventListener('click', closeProfilePopupButton);
 
-cardAddCloseButton.addEventListener('click', addCardClosedButton);
+newCardCloseButton.addEventListener('click', closeNewCardButton);
 
-profileFormElement.addEventListener('submit', formSubmitHandler);
+profileFormElement.addEventListener('submit', handleSubmitProfileForm);
 
-placeFormElement.addEventListener('submit', addCard);
+placeFormElement.addEventListener('submit', handleSubmitNewCardForm);
 
-zoomCloseButton.addEventListener('click', closedZoomButton);
+zoomCloseButton.addEventListener('click', closeZoomButton);
