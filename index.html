@@ -29,66 +29,6 @@
         </section>
         <section class="cards">
             <ul class="cards__list">
-                <!-- <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Архыз</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Челябинская область</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Иваново</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Камчатка</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Холмогорский район</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li>
-                <li class="cards__item">
-                    <img class="cards__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
-                        alt="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg">
-                    <button class="cards__delete-button" type="button"></button>
-                    <div class="cards__description">
-                        <h2 class="cards__name">Байкал</h2>
-                        <button class="cards__like-button" type="button"></button>
-                    </div>
-                </li> -->
             </ul>
         </section>
     </main>
@@ -101,11 +41,13 @@
         <div class="popup__container">
             <button class="popup__close popup-edit-close" type="button"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form" name="popup-form" id="profile-form">
-                <input class="popup__item popup__item_type_name" type="text" name="popup-name" value="Жак-Ив Кусто"
-                    placeholder="Имя">
-                <input class="popup__item popup__item_type_about" type="text" name="popup-about"
-                    value="Исследователь океана" placeholder="О себе">
+            <form class="popup__form" name="popup-form" id="profile-form" novalidate>
+                <input class="popup__item popup__item_type_name" id="name-input" type="text" name="popup-name"
+                    value="Жак-Ив Кусто" placeholder="Имя" required minlength="2" maxlength="40">
+                <span class="popup__item-error" id="name-input-error"></span>
+                <input class="popup__item popup__item_type_about" id="about-input" type="text" name="popup-about"
+                    value="Исследователь океана" placeholder="О себе" required minlength="2" maxlength="200">
+                <span class="popup__item-error" id="about-input-error"></span>
                 <button class="popup__save-button" type="submit">Сохранить</button>
             </form>
         </div>
@@ -114,9 +56,13 @@
         <div class="popup__container">
             <button class="popup__close popup-add-close" type="button"></button>
             <h3 class="popup__title">Новое место</h3>
-            <form class="popup__form" name="popup-form" id="place-form">
-                <input class="popup__item popup__item_type_place-name" type="text" placeholder="Название">
-                <input class="popup__item popup__item_type_place-link" type="url" placeholder="Ссылка на картинку">
+            <form class="popup__form" name="popup-form" id="place-form" novalidate>
+                <input class="popup__item popup__item_type_place-name" id="place-input" type="text"
+                    placeholder="Название" required minlength="2" maxlength="30">
+                <span class="popup__item-error" id="place-input-error"></span>
+                <input class="popup__item popup__item_type_place-link" id="url-input" type="url"
+                    placeholder="Ссылка на картинку" required>
+                <span class="popup__item-error" id="url-input-error"></span>
                 <button class="popup__save-button" type="submit">Создать</button>
             </form>
         </div>
@@ -143,6 +89,7 @@
 
 
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

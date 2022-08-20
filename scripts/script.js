@@ -49,6 +49,7 @@ const zoomCard = document.querySelector('.popup-img');
 const zoomImage = document.querySelector('.popup-img-src');
 const zoomTitle = document.querySelector('.popup-img-title');
 const zoomCloseButton = document.querySelector('.popup-img-close');
+const popups = document.querySelectorAll('.popup')
 
 // Добаление новой карточки template
 function getCards(item) {
@@ -99,12 +100,10 @@ function deleteCard(evt) {
 // общий попап на открытие
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
 }
 
-// общий попап на закрытие
-function closePopup(popup) {
-  popup.classList.remove('popup_opened');
-}
+
 
 // открытие окна редактирования профиля
 function openProfile () {
@@ -158,17 +157,34 @@ function closeNewCardButton () {
   closePopup(popupNewCard);
 
 }
+// общий попап на закрытие
+const closePopup = function () {
+  const popupOpened = document.querySelector('.popup_opened');
+  if (popupOpened) {
+    popupOpened.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePopupEsc);
+  }
+}
 
+//закрытие попапа кнопкой Esc
+const closePopupEsc = function (evt) {
+  if(evt.key === "Escape") {
+    closePopup();
+  };
+};
+
+//Закрытие попапа кликом на оверлей
+const closePopupOverlay = function (evt) {
+  if (evt.target !== evt.currentTarget) {
+    return;
+  }
+  closePopup();
+}
 newCardOpenButton.addEventListener('click', openNewCard);
-
 profileOpenButton.addEventListener('click', openProfile);
-
 profileCloseButton.addEventListener('click', closeProfilePopupButton);
-
 newCardCloseButton.addEventListener('click', closeNewCardButton);
-
 profileFormElement.addEventListener('submit', handleSubmitProfileForm);
-
 placeFormElement.addEventListener('submit', handleSubmitNewCardForm);
-
 zoomCloseButton.addEventListener('click', closeZoomButton);
+popups.forEach((item) => item.addEventListener('click', closePopupOverlay));

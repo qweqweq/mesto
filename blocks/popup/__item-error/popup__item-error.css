@@ -1,0 +1,19 @@
+.popup__item-error {
+  width: 358px;
+  font-size: 12px;
+  line-height: 12px;
+  color: #ff0000;
+  opacity: 1;
+  top: calc(100% + 5px);
+  margin: 5px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .popup__item-error {
+    width: 238px;
+  }
+}
