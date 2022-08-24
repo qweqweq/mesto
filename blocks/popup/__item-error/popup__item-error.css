@@ -6,10 +6,7 @@
   opacity: 1;
   top: calc(100% + 5px);
   margin: 5px 0 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-height: 15px;
+  min-height: 24px;
 }
 
 @media screen and (max-width: 768px) {
