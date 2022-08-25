@@ -103,6 +103,11 @@ function openPopup(popup) {
   document.addEventListener('keydown', closePopupEsc);
 };
 
+// общий попап на закрытие
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
+};
+
 // открытие окна редактирования профиля
 function openProfile() {
   openPopup(popupProfile);
@@ -158,21 +163,13 @@ function closeNewCardButton() {
   closePopup(popupNewCard);
 };
 
-// общий попап на закрытие
-const closePopup = function () {
-  const popupOpened = document.querySelector('.popup_opened');
-  if (popupOpened) {
-    popupOpened.classList.remove('popup_opened');
-    document.removeEventListener('keydown', closePopupEsc);
-  };
-};
-
 //закрытие попапа нажатием Esc
-const closePopupEsc = function (event) {
-  if(event.key === "Escape") {
-		closePopup(popups);
-  };
-};
+function closePopupEsc(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
+}
 
 //Закрытие попапа кликом на оверлей
 const closePopupOverlay = function (evt) {
