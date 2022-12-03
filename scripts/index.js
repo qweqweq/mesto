@@ -1,33 +1,6 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
-
-//карточки мест
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
+import { initialCards } from "./constants.js";
 
 //объявление переменных
 const popupProfile = document.querySelector(".popup-edit");
@@ -77,13 +50,13 @@ function createCard(name, link, components) {
 }
 
 //Добавление карточки
-function newCard(item) {
+function renderCard(item) {
   cardsContainer.prepend(item);
 }
 
 //Вывод карточек
 initialCards.forEach(function (item) {
-  newCard(createCard(item.name, item.link, components));
+  renderCard(createCard(item.name, item.link, components));
 });
 
 //Общий попап на открытие
@@ -117,7 +90,9 @@ function openNewCard() {
 //Добавление карточки
 function handleSubmitNewCardForm(evt) {
   evt.preventDefault();
-  newCard(createCard(nameInputPlace.value, linkInputPlace.value, components));
+  renderCard(
+    createCard(nameInputPlace.value, linkInputPlace.value, components)
+  );
   closePopup(popupNewCard);
 }
 
@@ -130,11 +105,8 @@ function openImagePopup(titleValue, imageValue) {
 }
 
 // общий попап на закрытие
-const closePopup = function () {
-  const popupOpened = document.querySelector(".popup_opened");
-  if (popupOpened) {
-    popupOpened.classList.remove("popup_opened");
-  }
+const closePopup = function (popup) {
+  popup.classList.remove("popup_opened");
   document.removeEventListener("keydown", closePopupEsc);
 };
 
