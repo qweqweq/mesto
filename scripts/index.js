@@ -69,8 +69,7 @@ function openPopup(popup) {
 function openProfile() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-
-  // popupProfileFormValidation.resetErrors();
+  popupProfileFormValidation.resetErrors();
   openPopup(popupProfile);
 }
 
@@ -79,7 +78,6 @@ function handleSubmitProfileForm(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  // popupProfileFormValidation.resetErrors();
   closePopup(popupProfile);
 }
 
